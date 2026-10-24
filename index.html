@@ -78,6 +78,7 @@ button{font:inherit;color:inherit}
 .mi.primary .chev{color:var(--on-pri)}
 .pill{display:inline-block;font-size:12px;font-weight:700;padding:1px 9px;border-radius:99px;margin-left:8px;vertical-align:2px;background:var(--tint);color:var(--deep)}
 .pill.ok{background:var(--navy);color:var(--on-navy)}
+.copy{margin:28px 0 8px;text-align:center;font-size:11.5px;line-height:1.7;color:var(--muted)}
 .foot{margin-top:22px;font-size:13px;color:var(--err);font-weight:500}
 
 .ftitle h1{margin:0 0 4px;font:900 25px/1.3 var(--disp);color:var(--deep);text-wrap:balance}
@@ -1781,7 +1782,8 @@ function screenHome(){
       menuItem(['📋','t3'],'自我檢視量表',function(){startForm('sc');},'',pillOf('sc')),
       menuItem(['🎙️','t4'],'志兵/專軍約談報告書',function(){startForm('iv');},'',pillOf('iv')),
       menuItem(['⚙️','t5'],'設定',function(){go('settings');})),
-    storeOK?null:h('p',{class:'foot',text:'目前環境無法暫存，資料只保留到關閉頁面為止。'}));
+    storeOK?null:h('p',{class:'foot',text:'目前環境無法暫存，資料只保留到關閉頁面為止。'}),
+    h('p',{class:'copy'},'Ⓒ2026 招募士許振浩 Designed Copyright',h('br'),'僅供陸軍司令部勤務營招募組使用'));
 }
 function screenBasic(){
   return h('div',null,
@@ -1795,8 +1797,7 @@ function screenSettings(){
     h('div',{class:'ftitle'},h('h1',{text:'設定'})),
     h('div',{class:'menu'},
       menuItem(['✅','t5'],'一鍵生成內容編輯',function(){go('setgen');}),
-      menuItem(['🎨','t4'],'風格',function(){go('setx',{n:'01'});}),
-      menuItem(['🧩','t3'],'待編輯02',function(){go('setx',{n:'02'});})),
+      menuItem(['🎨','t4'],'風格',function(){go('setx',{n:'01'});})),
     clearBlock());
 }
 function clearBlock(){
